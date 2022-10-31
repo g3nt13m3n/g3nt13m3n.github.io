@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on gentlemen | CTFteam</title>
+    <link>https://ge.ntle.men/tags/</link>
+    <description>Recent content in Tags on gentlemen | CTFteam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 31 Oct 2022 21:20:34 +0800</lastBuildDate><atom:link href="https://ge.ntle.men/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTF2022</title>
+      <link>https://ge.ntle.men/tags/ctf2022/</link>
+      <pubDate>Mon, 31 Oct 2022 21:20:34 +0800</pubDate>
+      
+      <guid>https://ge.ntle.men/tags/ctf2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JadeCTF2022</title>
+      <link>https://ge.ntle.men/tags/jadectf2022/</link>
+      <pubDate>Mon, 31 Oct 2022 21:20:34 +0800</pubDate>
+      
+      <guid>https://ge.ntle.men/tags/jadectf2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rev</title>
+      <link>https://ge.ntle.men/tags/rev/</link>
+      <pubDate>Mon, 31 Oct 2022 21:20:34 +0800</pubDate>
+      
+      <guid>https://ge.ntle.men/tags/rev/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
