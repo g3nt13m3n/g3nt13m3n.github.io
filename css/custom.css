@@ -1,22 +1,20 @@
-/* Global styles */
+/*Global styles*/
+
 font-face {
     font-family: "monaco";
     src: url("fonts/monaco.ttf") format("ttf"),
-      url("fonts/monaco.ttf") format("woff");
+      url("fonts/monaco.ttf") format("ttf");
     font-weight: normal;
     font-style: normal;
   }
-font-face {
-    font-family: "monaco";
-    src: url("fonts/ShantellSans") format("ttf"),
-      url("fonts/ShantellSans") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+
 body {
-    font-family: "monaco";
+    font-family: "monaco";    
+    /*font-family: "ShantellSans", "Segoe UI"; */
     font-feature-settings: "liga", "kern";
-    background-color: #fff;
+    background-color: #f7f7f7;
+    font-size: 18px;
+    letter-spacing:0.03em
 }
 
 /* Fix jumping scrollbar when switching to long pages */
@@ -29,31 +27,34 @@ html {
 /* margin top */
 
 .mt-xl {
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 /* link */
 
 a {
     color: #001018;
-    text-decoration: underline;
+    text-decoration: none;
     background-color: transparent;
 }
 
 a:active, a:hover {
     outline-width: 0;
+    text-decoration: none;
 }
 
 a:hover, a:focus {
-    color: #ff0000;
-    text-decoration: underline;
+    color: #0548a1;
+    text-decoration: none;
 }
+
+
 
 /* horizontal rule */
 
 hr {
     border: 0;
-    border-top: 1px solid #DCDCDC;
+    border-top: 1px solid #dcdcdc;
 }
 
 .content .markdown hr {
@@ -68,12 +69,12 @@ hr {
 }
 
 .header a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .header h1.name {
     font-weight: 600;
-    font-size: 2.1875rem;
+    font-size: 3.1875rem;
     color: #ff0000;
 }
 
@@ -82,22 +83,22 @@ hr {
 }
 
 .header ul.nav {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
 /* Partial: Content */
 
 .content h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    color: #292929;
+    color: #292922;
     margin-bottom: 1rem;
 }
 
 .content .meta {
     font-weight: 400;
-    font-size: 1rem;
-    color: #061f5a;
-    margin-bottom: 10px;
+    font-size: 0.8rem;
+    color: #515151;
+    margin-bottom: 11px;
 }
 
 .content .meta a {
@@ -105,7 +106,7 @@ hr {
 }
 
 .content .middot:before {
-    margin: 0 3px;
+    margin: 0 1px;
     content: "·";
 }
 
@@ -185,16 +186,16 @@ hr {
     word-wrap: break-word;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid #f7f7f7;
     border-radius: 6px;
 }
 
 .content .markdown pre code, .content .markdown pre output {
     /* enclosed by 4 backticks (````) */
     padding: 0;
-    font-size: 0.75rem;
-    line-height: 20px;
-    background-color: rgb(255, 255, 255);
+    font-size: 0.85rem;
+    line-height: 23px;
+    background-color: #fff;
     border-radius: 0;
 }
 
@@ -211,7 +212,7 @@ hr {
 }
 
 .content .markdown figure {
-    background: #fff;
+    background: #f7f7f7;
 }
 
 .content .post-item {
@@ -238,7 +239,7 @@ hr {
 }
 
 .content .meta-title a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .content .meta-date {
@@ -261,13 +262,89 @@ hr {
 }
 
 /* < medium screens */
-
-@media (max-width: 767.98px) {
+/*
+@media (max-width: 940px) {
     html {
-        font-size: 0.9rem;
+        font-size: 18px;
     }
     .content .meta, .content .markdown h1, .content .markdown h2, .content .markdown h3, .content .markdown h4, .content .markdown h5, .content .markdown h6, .content .markdown p, .content .markdown ul, .content .markdown ol, .content .markdown dl, .content .markdown blockquote, div.alert, form, table, .gist-file {
         margin-left: 0;
         margin-right: 0;
     }
 }
+
+*{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+
+
+html,body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,img
+{margin:0;padding:0;border:0}
+
+
+html{background-color:#f7f7f7;
+    font-size:16px;
+    line-height:1.5;
+    color:#222}
+
+a{color:#00004c;
+        text-decoration:none;
+        font-weight:700
+}
+
+a:hover,a:focus{color:#003}
+p,ul,ol
+{
+    font-size:1em;
+    line-height:1.5em;
+    margin-bottom:1.5em
+}
+
+h1{
+    font-size:2.25em;
+    line-height:1.3333em;
+    padding:0.33335em 0
+}
+
+h2{font-size:1.5em;
+    line-height:1em;
+    padding:1em 0 0 0}
+
+h3,h4,h5,h6{font-size:1.125em;
+        line-height:1.3334em;
+        padding:0.66667em 0}
+
+blockquote{font-style:italic;
+            margin:1.5em;-webkit-border-radius:4px;
+            -moz-border-radius:4px;
+            -ms-border-radius:4px;border-radius:4px;
+            background-color:#eaeaea;padding:0 1.5em}
+
+blockquote p,blockquote ul,blockquote ol
+            {padding:1.5em 0}
+
+
+
+            
+@media (min-width: 940px){p,ul,ol{font-size:1em;line-height:1.3334em;margin-bottom:1.3334em}h1{font-size:2.6667em;line-height:1em;padding:0.25em 0}h2{font-size:2em;line-height:1.3334em;padding:0.66667em 0 0 0}h3,h4,h5,h6{font-size:1.3334em;line-height:1em;padding:0.5em 0}blockquote{font-style:italic;margin:1.3334em;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;border-radius:4px;background-color:#eaeaea;padding:0 1.33334em}blockquote p,blockquote ul,blockquote ol{padding:1.33334em 0}}.fixed{position:fixed;width:100%}@media (min-width: 940px)
+
+
+
+{.fixed{position:static}}
+#container{margin:0 auto;
+    max-width:730px;
+    padding:0 1.5rem}
+
+#header{text-align:center;
+        padding:24px 0;
+        position:relative}
+#header a{text-decoration:none;
+        color:#222;
+        display:inline-block}
+
+#header img
+            {max-height:90px;
+            margin: 0 auto;
+            display: block}
