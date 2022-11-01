@@ -2,10 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ge.ntle.men/blog/</loc>
-    <lastmod>2020-11-21T12:00:00+00:00</lastmod>
+    <loc>https://ge.ntle.men/tags/ctf2022/</loc>
+    <lastmod>2022-10-31T21:20:34+08:00</lastmod>
   </url><url>
     <loc>https://ge.ntle.men/</loc>
+    <lastmod>2022-10-31T21:20:34+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/tags/jadectf2022/</loc>
+    <lastmod>2022-10-31T21:20:34+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/posts/we_are_gentlemen/</loc>
+    <lastmod>2022-10-31T21:20:34+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/posts/</loc>
+    <lastmod>2022-10-31T21:20:34+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/tags/rev/</loc>
+    <lastmod>2022-10-31T21:20:34+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/tags/</loc>
+    <lastmod>2022-10-31T21:20:34+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/blog/</loc>
     <lastmod>2020-11-21T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ge.ntle.men/blog/hugo-tanka-theme-demo/</loc>
@@ -21,7 +39,5 @@
     <lastmod>2016-01-22T09:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ge.ntle.men/categories/</loc>
-  </url><url>
-    <loc>https://ge.ntle.men/tags/</loc>
   </url>
 </urlset>
