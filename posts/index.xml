@@ -5,18 +5,6 @@
     <link>https://ge.ntle.men/posts/</link>
     <description>Recent content in Blog on gentlemen | CTFteam</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 31 Oct 2022 21:20:34 +0800</lastBuildDate><atom:link href="https://ge.ntle.men/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>JadeCTF2022 BitSetGo</title>
-      <link>https://ge.ntle.men/posts/jadectf2022-bitsetgo/</link>
-      <pubDate>Mon, 31 Oct 2022 21:20:34 +0800</pubDate>
-      
-      <guid>https://ge.ntle.men/posts/jadectf2022-bitsetgo/</guid>
-      <description>Bit Set Go is a reversing challenge that was part of the 2022 Jade CTF. We were given a binary and its output, and had to find the flag.
-Overview output consists of 41 seemingly random bytes:
-0206541B 175B135B 17375C17 0C3A5C11 37510409 15125C16 370B5811 370D550F 1E2E312B 000C0402 37 bitsetgo is a 64-bit ELF go binary containing debug symbols. By running it, we see that it reads the two files flag.txt and key.</description>
-    </item>
-    
+    <language>en</language><atom:link href="https://ge.ntle.men/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

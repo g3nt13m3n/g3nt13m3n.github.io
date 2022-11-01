@@ -6,13 +6,23 @@
     <description>Recent content in Writeups on gentlemen | CTFteam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 31 Oct 2022 21:20:34 +0800</lastBuildDate><atom:link href="https://ge.ntle.men/tags/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Nov 2022 11:29:51 +0800</lastBuildDate><atom:link href="https://ge.ntle.men/tags/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JadeCTF2022 &#43;&#43;Game</title>
+      <link>https://ge.ntle.men/writeups/jadectf2022/&#43;&#43;game/</link>
+      <pubDate>Tue, 01 Nov 2022 11:29:51 +0800</pubDate>
+      
+      <guid>https://ge.ntle.men/writeups/jadectf2022/&#43;&#43;game/</guid>
+      <description>++game is a web challenge that was part of the 2022 Jade CTF. In order to get the flag, we had to beat an impossible game.
+Overview After registering, the game greets us with our current score and a button to increase it. Each time we click the button, the score is increased by 1. To protect itself from automated requests, a valid reCAPTCHA token is required to increase the score.</description>
+    </item>
+    
     <item>
       <title>JadeCTF2022 BitSetGo</title>
-      <link>https://ge.ntle.men/posts/jadectf2022-bitsetgo/</link>
+      <link>https://ge.ntle.men/writeups/jadectf2022/bitsetgo/</link>
       <pubDate>Mon, 31 Oct 2022 21:20:34 +0800</pubDate>
       
-      <guid>https://ge.ntle.men/posts/jadectf2022-bitsetgo/</guid>
+      <guid>https://ge.ntle.men/writeups/jadectf2022/bitsetgo/</guid>
       <description>Bit Set Go is a reversing challenge that was part of the 2022 Jade CTF. We were given a binary and its output, and had to find the flag.
 Overview output consists of 41 seemingly random bytes:
 0206541B 175B135B 17375C17 0C3A5C11 37510409 15125C16 370B5811 370D550F 1E2E312B 000C0402 37 bitsetgo is a 64-bit ELF go binary containing debug symbols. By running it, we see that it reads the two files flag.txt and key.</description>

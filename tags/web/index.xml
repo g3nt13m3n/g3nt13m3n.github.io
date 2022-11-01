@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on gentlemen | CTFteam</title>
+    <link>https://ge.ntle.men/tags/web/</link>
+    <description>Recent content in Web on gentlemen | CTFteam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Nov 2022 11:29:51 +0800</lastBuildDate><atom:link href="https://ge.ntle.men/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JadeCTF2022 &#43;&#43;Game</title>
+      <link>https://ge.ntle.men/writeups/jadectf2022/&#43;&#43;game/</link>
+      <pubDate>Tue, 01 Nov 2022 11:29:51 +0800</pubDate>
+      
+      <guid>https://ge.ntle.men/writeups/jadectf2022/&#43;&#43;game/</guid>
+      <description>++game is a web challenge that was part of the 2022 Jade CTF. In order to get the flag, we had to beat an impossible game.
+Overview After registering, the game greets us with our current score and a button to increase it. Each time we click the button, the score is increased by 1. To protect itself from automated requests, a valid reCAPTCHA token is required to increase the score.</description>
+    </item>
+    
+  </channel>
+</rss>
