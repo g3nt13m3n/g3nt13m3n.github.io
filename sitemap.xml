@@ -3,12 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ge.ntle.men/</loc>
-    <lastmod>2022-11-01T11:29:51+08:00</lastmod>
+    <lastmod>2022-11-02T10:13:52+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/pwncollege/babysuidlevel51/</loc>
+    <lastmod>2022-11-02T10:13:52+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/pwncollege/</loc>
+    <lastmod>2022-11-02T10:13:52+08:00</lastmod>
   </url><url>
     <loc>https://ge.ntle.men/tags/jadectf2022/</loc>
     <lastmod>2022-11-01T11:29:51+08:00</lastmod>
   </url><url>
-    <loc>https://ge.ntle.men/writeups/jadectf2022/&#43;&#43;game/</loc>
+    <loc>https://ge.ntle.men/jadectf2022/&#43;&#43;game/</loc>
+    <lastmod>2022-11-01T11:29:51+08:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/jadectf2022/</loc>
     <lastmod>2022-11-01T11:29:51+08:00</lastmod>
   </url><url>
     <loc>https://ge.ntle.men/tags/</loc>
@@ -20,10 +29,7 @@
     <loc>https://ge.ntle.men/tags/writeups/</loc>
     <lastmod>2022-11-01T11:29:51+08:00</lastmod>
   </url><url>
-    <loc>https://ge.ntle.men/writeups/</loc>
-    <lastmod>2022-11-01T11:29:51+08:00</lastmod>
-  </url><url>
-    <loc>https://ge.ntle.men/writeups/jadectf2022/bitsetgo/</loc>
+    <loc>https://ge.ntle.men/jadectf2022/bitsetgo/</loc>
     <lastmod>2022-10-31T21:20:34+08:00</lastmod>
   </url><url>
     <loc>https://ge.ntle.men/tags/rev/</loc>
@@ -31,6 +37,8 @@
   </url><url>
     <loc>https://ge.ntle.men/about/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ge.ntle.men/writeups/</loc>
   </url><url>
     <loc>https://ge.ntle.men/categories/</loc>
   </url>

